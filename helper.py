@@ -172,6 +172,8 @@ def download_extract(database_name, data_path):
     # Remove compressed data
     os.remove(save_path)
 
+def extract_only(database_name, data_path):
+	"""Extracts the database when it has been downloaded externally. Use this when the download fails."""
 
 class Dataset(object):
     """
