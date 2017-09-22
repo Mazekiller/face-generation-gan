@@ -172,8 +172,29 @@ def download_extract(database_name, data_path):
     # Remove compressed data
     os.remove(save_path)
 
-def extract_only(database_name, data_path):
-	"""Extracts the database when it has been downloaded externally. Use this when the download fails."""
+"""def extract_only(database_name, data_path):
+	Extracts the database when it has been downloaded externally. Use this when the download fails.
+	if database_name == DATASET_CELEBA_NAME:
+		extract_path = os.path.join(data_path, 'img_align_celeba')
+	elif database_name == DATASET_MNIST_NAME:
+		extract_path = os.path.join(data_path, 'mnist')
+	
+	if os.path.exists(extract_path):
+        print('Found {} Data'.format(database_name))
+        return
+
+    if not os.path.exists(data_path):
+        os.makedirs(data_path)
+		
+	os.makedirs(extract_path)
+    try:
+        extract_fn(save_path, extract_path, database_name, data_path)
+    except Exception as err:
+        shutil.rmtree(extract_path)  # Remove extraction folder if there is an error
+        raise err
+
+    # Remove compressed data
+    os.remove(save_path)"""
 
 class Dataset(object):
     """
